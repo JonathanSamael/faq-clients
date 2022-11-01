@@ -7,19 +7,73 @@ body {
 }
 
 .container {
-    width: 655px;
+    max-width: 655px;
     background-color: #fcfcfc;
     display: flex;
+    justify-content: space-around;
     box-shadow: 0px 20px 20px -10px #00000025;
     border-radius: 21px;
     position: relative;
+    padding: 60px 35px;
 }
 
 .container .image img {
     position: absolute;
     left: -90px;
+    top: 32px;
 }
 
 .container .info {
-    
+    margin-left: 200px;
 }
+
+.container hr {
+    opacity: .5;
+    margin: 15px 0;
+}
+
+.container .info .title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    padding-bottom: 15px;
+}
+
+.container .info .subtitle {
+    font-size: 1.7rem;
+    font-weight: 500;
+    display: flex;
+    justify-content: space-between; 
+    cursor: pointer;
+}
+
+.container .info .subtitle::after {
+    background: url(../images/seta-fechada.png) no-repeat center center;
+    content: "";
+    width: 15px;
+    height: 15px;
+    display: inline-block;
+}
+
+.container .info .subtitle.arrow-active:enabled {
+    background: url(../images/seta-aberta.png) no-repeat center center;
+    content: "";
+    width: 15px;
+    height: 15px;
+    display: inline-block;
+}
+
+/* Pensar uma forma de colocar uma classe quando o botão for ativado e mudar a imagem para a seta vermelha, acima coloquei para tentar usar o enabled. */
+
+.container .info .paragraph {
+    font-size: 1.5rem;
+    font-weight: 300;
+    display: none;
+    transition: 200ms ease-out;
+}
+
+.info .paragraph.selected {
+    display: inline-block;
+    padding: 0;
+}
+
+
