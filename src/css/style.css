@@ -1,0 +1,25 @@
+body {
+    background-color: #e5e5e5;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    width: 655px;
+    background-color: #fcfcfc;
+    display: flex;
+    box-shadow: 0px 20px 20px -10px #00000025;
+    border-radius: 21px;
+    position: relative;
+}
+
+.container .image img {
+    position: absolute;
+    left: -90px;
+}
+
+.container .info {
+    
+}
