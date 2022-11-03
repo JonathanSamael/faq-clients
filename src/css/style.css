@@ -7,12 +7,13 @@ body {
 }
 
 .container {
-    max-width: 655px;
+    width: 655px;
+    min-height: 347px;
     background-color: #fcfcfc;
     display: flex;
     justify-content: space-around;
-    box-shadow: 0px 20px 20px -10px #00000025;
-    border-radius: 21px;
+    box-shadow: 0px 27px 49px -25px #00000025;
+    border-radius: 30px;
     position: relative;
     padding: 60px 35px;
 }
@@ -24,12 +25,8 @@ body {
 }
 
 .container .info {
-    margin-left: 200px;
-}
-
-.container hr {
-    opacity: .5;
-    margin: 15px 0;
+    margin-left: 190px;
+    width: 90%;
 }
 
 .container .info .title {
@@ -38,42 +35,47 @@ body {
     padding-bottom: 15px;
 }
 
-.container .info .subtitle {
+.container .info .items .item .subtitle {
     font-size: 1.7rem;
     font-weight: 500;
-    display: flex;
-    justify-content: space-between; 
-    cursor: pointer;
+    padding-bottom: 15px;
+    transition: 200ms ease;
+    width: 90%;
 }
 
-.container .info .subtitle::after {
-    background: url(../images/seta-fechada.png) no-repeat center center;
-    content: "";
-    width: 15px;
-    height: 15px;
-    display: inline-block;
+.container .info .items .item .subtitle:hover {
+    color: #f47c57;
 }
 
-.container .info .subtitle.arrow-active:enabled {
-    background: url(../images/seta-aberta.png) no-repeat center center;
-    content: "";
-    width: 15px;
-    height: 15px;
-    display: inline-block;
-}
-
-/* Pensar uma forma de colocar uma classe quando o botão for ativado e mudar a imagem para a seta vermelha, acima coloquei para tentar usar o enabled. */
-
-.container .info .paragraph {
+.container .items .item .paragraph {
     font-size: 1.5rem;
     font-weight: 300;
     display: none;
-    transition: 200ms ease-out;
+    padding-bottom: 15px;
 }
 
-.info .paragraph.selected {
-    display: inline-block;
-    padding: 0;
+.info .items .item {
+    cursor: pointer;
+    background-image: url(../images/seta-fechada.png);
+    background-repeat: no-repeat;
+    background-position: top 8px right 0px;
+    background-size: 12px;
+    border-bottom: 1px solid #d8d8d8;
+    margin: 10px 0;
 }
 
+.info .items .item:last-child {
+    border-bottom: none;
+}
 
+.info .items .item.selected h2 {
+    font-weight: 700;
+}
+
+.info .items .item.selected .paragraph {
+    display: block;
+}
+
+.info .items .item.selected {
+    background-image: url(../images/seta-aberta.png);
+}
